@@ -17,7 +17,7 @@
 +{
 +  time_t t;
 +  struct tm *tmp;
-+  char timestring[500];
++  char timestring = malloc(500);
 + 
 +  t = time(NULL);
 +  tmp = localtime(&t);

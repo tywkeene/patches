@@ -14,7 +14,7 @@
 -static const char selbordercolor[]  = "#005577";
 -static const char selbgcolor[]      = "#005577";
 -static const char selfgcolor[]      = "#eeeeee";
-+static const char font[]            = "-*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*";
++static const char fonts[]            = "-*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*";
 +static const char normbordercolor[] = "#1a1a1a";
 +static const char normbgcolor[]     = "#1a1a1a";
 +static const char normfgcolor[]     = "#ffffff";
@@ -66,7 +66,6 @@
  #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
  
  /* commands */
--static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 -static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 -static const char *termcmd[]  = { "st", NULL };
 +static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
