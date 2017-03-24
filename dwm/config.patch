@@ -1,5 +1,5 @@
---- dwm-6.1/config.h	2017-03-24 10:42:21.259599006 -0600
-+++ dwm-6.0/config.h	2017-03-24 10:25:33.018208995 -0600
+--- dwm-6.1/config.def.h	2017-03-24 10:42:21.259599006 -0600
++++ dwm-6.0/config.def.h	2017-03-24 10:25:33.018208995 -0600
 @@ -1,44 +1,36 @@
  /* See LICENSE file for copyright and license details. */
  
