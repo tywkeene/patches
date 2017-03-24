@@ -1,0 +1,38 @@
+--- dwm-6.1/dwm.c	2015-11-08 15:39:37.000000000 -0700
++++ patched/dwm.c	2017-03-24 10:41:24.331902019 -0600
+@@ -20,6 +20,7 @@
+  *
+  * To understand everything else, start reading main().
+  */
++#include <time.h>
+ #include <errno.h>
+ #include <locale.h>
+ #include <signal.h>
+@@ -1989,11 +1990,25 @@
+ 		strcpy(c->name, broken);
+ }
+ 
++char
++*get_time(void)
++{
++  time_t t;
++  struct tm *tmp;
++  char timestring[500];
++ 
++  t = time(NULL);
++  tmp = localtime(&t);
++ 
++  memset(timestring, 0, strlen(timestring));
++  strftime(timestring, sizeof(timestring), "%a, %b %d %I:%M %p", tmp);
++  return timestring;
++}
++
+ void
+ updatestatus(void)
+ {
+-	if (!gettextprop(root, XA_WM_NAME, stext, sizeof(stext)))
+-		strcpy(stext, "dwm-"VERSION);
++	strcpy(stext, get_time());
+ 	drawbar(selmon);
+ }
+ 
